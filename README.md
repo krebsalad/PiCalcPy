@@ -1,5 +1,9 @@
 # PiCalcPy
-Install picalc bottle server. Meant for demonstration purpose.
+Simple picalc bottle server. Meant for demonstration purpose.
+
+Requirements:
+- python
+- wget
 
 Clone the repo, go in to the file and run: (sudo) python install_picalc_server.py
 - requires sudo rights to install mpmath library
