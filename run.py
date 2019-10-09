@@ -9,7 +9,7 @@ def index(p):
         return str("error, precision was not an int")
     mp.dps = precision
     pi = mp.pi
-    return str("PI: " + str(pi) + “\n”) 
+    return str("PI: " + str(pi) + "\n")
 
 # run
 run(host='0.0.0.0', port=8080)
