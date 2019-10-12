@@ -22,3 +22,9 @@ Start the server with: (sudo) python run.py mode=server
 - send request from other machine: curl <host machine ip>:8080/PiCalc/1000
 #
   
+# start the load balancer
+First change the mappings in lb_config.cfg
+Start the server with: (sudo) python run.py mode=lb
+- will listen on port 8080 on defined ips in lb_config.cfg and map them to 80 
+- send request from other machine: curl <host machine ip>:80/PiCalc/1000
+#
