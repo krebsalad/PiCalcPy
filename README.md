@@ -6,13 +6,13 @@ Simple picalc bottle server. Meant for demonstration purpose.
 - wget
 
 # install the picalc server
-Clone the repo, go in to the file and run: (sudo) python install_picalc_server.py
+Clone the repo, go in to the file and run: (sudo) python install_picalc.py
 - requires sudo rights to install mpmath library
 - will download bottle.py library
 #
 
 # install a loadbalancer
-Clone the repo, go in to the file and run: (sudo) python install_picalc_server.py lb
+Clone the repo, go in to the file and run: (sudo) python install_picalc.py lb
 - will download [PumpkinLB](https://pypi.org/project/PumpkinLB/) loadbalancing tool
 #
 
