@@ -8,17 +8,13 @@ import sys
 current_dir = os.getcwd()
 pi_calc_dir = current_dir + "/"
 
-# install loadbalancer
+# install loadbalancer if arg lb
 if(len(sys.argv) > 1):
    arg = sys.argv[1]
    if(arg == "lb"):
         subprocess.call(["wget", "https://files.pythonhosted.org/packages/cc/88/b4df1a3416ea09dd17bea4214d802d87f83afeafe9646ef42712c8e652f6/PumpkinLB-2.0.0.tar.gz"], cwd=pi_calc_dir)
         subprocess.call(["tar", "-xzf", "PumpkinLB-2.0.0.tar.gz"], cwd=pi_calc_dir)
         subprocess.call(["rm", "PumpkinLB-2.0.0.tar.gz"], cwd=pi_calc_dir)
-        config_file = open("lb_config.cfg", "w+")
-        config_file.write("[options]\nbuffer_size=4096\n\n[mappings]\n80=192.168.190.100:8080,192.168.190.101:8080")
-        config_file.close()
-        print("downloaded python Pumpkin LB tcp loadbalancing tool and created example config")
         sys.exit()
 
 # or else install the server
