@@ -25,7 +25,7 @@ for arg in sys.argv:
         
 # help
 if(mode == "help"):
-    print("run with arguments  ( mode=server ) or ( mode=lb ), also, in lb mode you can set PumpkinLB config with ( lb_config=configcontents ) ")
+    print("PicalcPy: run with arguments  ( mode=server ) or ( mode=lb ), also, in lb mode you can set PumpkinLB config with ( lb_config=configcontents ) ")
     sys.exit()        
         
 ## start Loadbalancer ##
