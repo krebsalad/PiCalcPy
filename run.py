@@ -8,6 +8,7 @@ import subprocess
 current_dir = os.getcwd()
 mode = "help"
 lb_config = "dont_set_config_file"
+port_num=8080
 
 # read args
 for arg in sys.argv:
@@ -21,6 +22,10 @@ for arg in sys.argv:
     if(re.match("lb_config=",arg)):
         txt = re.sub("lb_config=", "", arg)
         lb_config = txt
+        
+    if(re.match("port=",arg)):
+        txt = re.sub("port=", "", arg)
+        port_num = int(txt)
 
         
 # help
