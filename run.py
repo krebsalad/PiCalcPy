@@ -24,7 +24,7 @@ for arg in sys.argv:
         if(txt == "lb"):
             mode = "lb"
         if(txt == "server"):
-            mode = "lb"
+            mode = "server"
     
     if(re.match("lb_config=",arg)):
         txt = re.sub("lb_config=", "", arg)
