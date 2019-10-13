@@ -42,7 +42,7 @@ if(mode == "lb"):
     
 ## start Picalc server ##
 if(mode == "server"):
-    import server.py as picalc_server
+    import picalc_server
     picalc_server.run_server(8080)    
     
 print("no such mode: " + mode)
