@@ -23,5 +23,5 @@ def index(p):
     return str("Server ip: "+ip_addr+ "\nPI = " + str(pi) + "\n")
 
 # run picalc on port 8080
-def run_server(port_num=8080)
+def run_server(port_num=8080):
     run(host=ip_addr, port=port_num)
