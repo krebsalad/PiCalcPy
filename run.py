@@ -10,6 +10,7 @@ current_dir = os.getcwd()
 hostname = socket.gethostname()
 ip_addr = socket.gethostbyname(hostname)
 mode = "server"
+lb_config = "dont_set_config_file"
 
 # read args
 for arg in sys.argv:
@@ -22,18 +23,26 @@ for arg in sys.argv:
         txt = re.sub("mode=", "", arg)
         if(txt == "lb"):
             mode = "lb"
-
-
+    
+    if(re.match("lb_config=",arg)):
+        txt = re.sub("lb_config=", "", arg)
+        lb_config = txt
 
 ## Loadbalancer ##
 if(mode == "lb"):
+    # if set new config file
+    if(lb_config != "dont_set_config_file"):
+        config_file = open("lb_config.cfg", "w")
+        config_file.write(lb_config)
+        config_file.close()
+    # start loadbalancer
     subprocess.call(["PumpkinLB-2.0.0/PumpkinLB.py", "lb_config.cfg"], cwd=current_dir)
     sys.exit()
 
+# quit if no settings given
 if(mode != "server"):
-    print("run with arguments mode=server or mode=lb")
+    print("run with arguments mode=server or mode=lb, also you can set PumpkinLB config with lb_config=configcontents")
     sys.exit()
-
 
 ## Picalc server ##
 from bottle import route, run, template
