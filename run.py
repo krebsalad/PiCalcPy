@@ -30,7 +30,7 @@ for arg in sys.argv:
         
 # help
 if(mode == "help"):
-    print("PicalcPy: run with arguments  ( mode=server ) or ( mode=lb ), also, in lb mode you can set PumpkinLB config with ( lb_config=configcontents ) ")
+    print("PicalcPy: run with arguments  ( mode=server ) or ( mode=lb ), also,\n - in server mode you can add port argument example (port=8080)\n - in lb mode you can set PumpkinLB config with ( lb_config=configcontents ) ")
     sys.exit()        
         
 ## start Loadbalancer ##
@@ -48,7 +48,7 @@ if(mode == "lb"):
 ## start Picalc server ##
 if(mode == "server"):
     import picalc_server
-    picalc_server.run_server(8080)    
+    picalc_server.run_server(port_num)    
     
 print("no such mode: " + mode)
 sys.exit()
